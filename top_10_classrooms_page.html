@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户数量前十的课程</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>用户数量前十的课程</h1>
+        <div id="chart-container" style="width: 900px; height: 500px;"></div>
+        <script type="text/javascript">
+            var chartDom = document.getElementById('chart-container');
+            var myChart = echarts.init(chartDom);
+            var option;
+
+            option = {
+                title: {
+                    text: '用户数量前十的课程'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['65', '744', '727', '484', '495', '119', '117', '1052', '367', '604']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        name: '用户数量',
+                        type: 'bar',
+                        data: [4801, 4416, 3682, 3464, 2391, 2349, 2087, 1998, 1768, 1226]
+                    }
+                ]
+            };
+
+            option && myChart.setOption(option);
+        </script>
+    </div>
+</body>
+</html>
